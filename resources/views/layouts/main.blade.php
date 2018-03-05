@@ -14,7 +14,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink" id="mainNav">
     <div class="container">
-        <a class="navbar-brand" href="{!! url('/') !!}">{{ config('app.name') }}</a>
+        <a class="navbar-brand" href="{!! route('getHome') !!}">{{ config('app.name') }}</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fa fa-bars"></i>

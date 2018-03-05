@@ -24,11 +24,11 @@ Route::group(['prefix'=>app()->getLocale()], function(){
 
     Route::get('/', function () {
         return view('index');
-    });
+    })->name('getHome');
 
     Route::get('services', function () {
         return view('services');
-    });
+    })->name('getServices');
 
     Route::group(['middleware' => ['spam']], function() {
         Route::post('contact', ['as' => 'postContact', 'uses' => 'ContactController@postContact']);
