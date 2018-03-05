@@ -1,0 +1,74 @@
+// Mixins
+// Background Cover Mixin
+@mixin background-cover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+// Font Mixins
+@mixin serif-font {
+  font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+@mixin body-font {
+  font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+@mixin heading-font {
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+// Media query mixins for different devices
+@mixin mobile {
+  @media (max-width: #{$breakSmall - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakSmall}) and (max-width: #{$breakMedium - 1px}) {
+    @content;
+  }
+}
+
+@mixin smallDesktop {
+  @media (min-width: #{$breakMedium}) and (max-width: #{$breakLarge - 1px}) {
+    @content;
+  }
+}
+
+@mixin largeDesktop {
+  @media (min-width: #{$breakLarge}) {
+    @content;
+  }
+}
+
+@mixin tabletAndSmallDesktop {
+  @media (min-width: #{$breakSmall}) and (max-width: #{$breakLarge - 1px}) {
+    @content;
+  }
+}
+
+@mixin upToTablet {
+  @media (max-width: #{$breakMedium - 1px}) {
+    @content;
+  }
+}
+
+@mixin upToSmallDesktop {
+  @media (max-width: #{$breakLarge - 1px}) {
+    @content;
+  }
+}
+
+@mixin atLeastTablet {
+  @media (min-width: #{$breakSmall}) {
+    @content;
+  }
+}
+
+@mixin atLeastSmallDesktop {
+  @media (min-width: #{$breakMedium}) {
+    @content;
+  }
+}

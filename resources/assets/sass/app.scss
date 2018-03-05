@@ -1,0 +1,74 @@
+@import "variables.scss";
+@import "mixins.scss";
+@import "navbar.scss";
+
+body {
+  @include body-font;
+  font-weight: 300;
+  font-size:13px;
+  letter-spacing:1px;
+  line-height:1.8em;
+}
+p {
+  color: $gray-700;
+}
+h1, h2, h3, h5, h6 {
+  font-weight: 400;
+}
+h4 {
+  font-weight: 300;
+  font-size: 15px;
+
+}
+a {
+  color: $primary;
+}
+a:hover {
+  color: darken($primary, 10%);
+  text-decoration: none;
+}
+a:focus {
+  outline: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+// Styling for the navbar
+
+
+.btn {
+  @include heading-font;
+  font-weight: 700;
+}
+
+.btn-xl {
+  font-size: 18px;
+  padding: 20px 40px;
+}
+
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: darken($primary, 7.5%) !important;
+    border-color: darken($primary, 7.5%) !important;
+    color: white;
+  }
+  &:active,
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(254, 209, 55,.5) !important;
+  }
+}
+
+div#mainWrapper {
+  margin-top: 70px;
+}
