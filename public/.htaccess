@@ -35,13 +35,17 @@
 	ExpiresByType image/gif "access plus 2419200 seconds"
 	ExpiresByType image/jpeg "access plus 2419200 seconds"
 	ExpiresByType image/png "access plus 2419200 seconds"
+	ExpiresByType image/svg+xml "access plus 2419200 seconds"
 	ExpiresByType text/css "access plus 2419200 seconds"
 	ExpiresByType text/javascript "access plus 2419200 seconds"
+	ExpiresByType text/x-javascript "access plus 2419200 seconds"
 	ExpiresByType application/x-javascript "access plus 2419200 seconds"
 </ifModule>
 # END Expires
 
 <IfModule mod_deflate.c>
+    AddType image/svg+xml .svg
+    AddOutputFilterByType DEFLATE image/svg+xml
     AddOutputFilterByType DEFLATE text/html
     AddOutputFilterByType DEFLATE text/css
     AddOutputFilterByType DEFLATE text/javascript
