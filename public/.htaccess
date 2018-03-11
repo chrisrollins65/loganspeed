@@ -41,6 +41,7 @@
 	ExpiresByType text/x-javascript "access plus 2419200 seconds"
 	ExpiresByType application/javascript "access plus 2419200 seconds"
 	ExpiresByType application/x-javascript "access plus 2419200 seconds"
+	ExpiresByType application/font-woff "access plus 2419200 seconds"
 </ifModule>
 # END Expires
 
