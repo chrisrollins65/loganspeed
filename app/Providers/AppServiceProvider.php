@@ -14,6 +14,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->share('appLanguages', config('app.languages'));
+        // Set the locale based on the first segment of the request
+        if (in_array(request()->segment(1), config('app.languages'))) {
+            app()->setLocale(request()->segment(1));
+        }
     }
 
     /**

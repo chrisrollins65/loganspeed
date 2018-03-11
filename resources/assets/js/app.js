@@ -20,3 +20,30 @@ $('.js-scroll-trigger').click(function(e) {
         return false;
     }
 });
+
+/* ==========================================================================
+ Contact Form
+ ========================================================================== */
+
+var contactFormSubmitted = false;
+$('#contact-form').submit(function(e){
+    e.preventDefault();
+    if (contactFormSubmitted) {
+        return;
+    }
+    contactFormSubmitted = true;
+    var $this = $(this);
+    $.post(logan.contactPostUrl, $this.serialize())
+        .done(function() {
+            $this.find(':input').attr('disabled', 'disabled');
+            $this.fadeTo("slow", 0.15, function() {
+                $this.find('label').css('cursor', 'default');
+                $('.success-cf').fadeIn();
+            });
+        })
+        .fail(function() {
+            $this.fadeTo("slow", 0.15, function() {
+                $('.error-cf').fadeIn();
+            });
+        })
+});

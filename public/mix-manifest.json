@@ -1,6 +1,8 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/css/home.css": "/css/home.css",
-    "/js/home.js": "/js/home.js"
+    "/js/app.js": "/js/app.js?id=bc09be9a65086c93947a",
+    "/css/app.css": "/css/app.css?id=cbc9fef273368ffe64ac",
+    "/css/home.css": "/css/home.css?id=f54e1beac3f2d647d282",
+    "/css/rates.css": "/css/rates.css?id=b29a6d9d01cd3e8360fc",
+    "/css/services.css": "/css/services.css?id=02d4ff53d97f3701cc0a",
+    "/js/home.js": "/js/home.js?id=fec8f6333581a2002578"
 }

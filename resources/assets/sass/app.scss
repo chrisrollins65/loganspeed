@@ -2,46 +2,64 @@
 @import "mixins.scss";
 @import "navbar.scss";
 
+html, body {
+  height: 100%;
+}
+
 body {
   @include body-font;
   font-weight: 300;
-  font-size:13px;
-  letter-spacing:1px;
-  line-height:1.8em;
+  letter-spacing: 1px;
+  line-height: 1.8em;
+  display: flex;
+  flex-direction: column;
 }
+
+.site-footer {
+  background: $gray-200;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
 p {
   color: $gray-700;
 }
+
 h1, h2, h3, h5, h6 {
   font-weight: 400;
 }
+
 h4 {
   font-weight: 300;
   font-size: 15px;
 
 }
+
 a {
   color: $primary;
 }
+
 a:hover {
   color: darken($primary, 10%);
   text-decoration: none;
 }
+
 a:focus {
   outline: none;
 }
+
 img {
   max-width: 100%;
   height: auto;
 }
+
 ul, li {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
-// Styling for the navbar
-
 
 .btn {
   @include heading-font;
@@ -65,10 +83,236 @@ ul, li {
   }
   &:active,
   &:focus {
-    box-shadow: 0 0 0 0.2rem rgba(254, 209, 55,.5) !important;
+    box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, .5) !important;
   }
 }
 
 div#mainWrapper {
   margin-top: 70px;
+  flex: 1 0 auto;
+}
+
+.center-block {
+  float: none;
+}
+
+.btn-default {
+  color: $white;
+  background-color: $primary;
+  border-color: $primary;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+  padding: 12px 1.5em;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active {
+  color: $white;
+  background-color: darken($primary, 10%);
+  border-color: darken($primary, 10%);
+}
+
+.btn:active:focus, .btn-default:focus, .btn:focus, .btn-default:active {
+  outline: none;
+}
+
+.alert, .success {
+  padding: .5em 1em;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.alert {
+  background-color: $alertBg;
+}
+
+.success {
+  background-color: $successBg;
+}
+
+.alert i, .success i {
+  padding-right: .5em;
+}
+
+/* ------------------------------------------------------------------------------
+   Contact
+-------------------------------------------------------------------------------*/
+
+section.contact {
+  h2 {
+    font-weight: 700;
+    font-size: 27px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+  }
+
+  .btn-default {
+    width: 100%;
+  }
+
+  .contact-form {
+    position: relative;
+
+    .form-control {
+      border-color: $gray-300;
+      margin-bottom: .75em;
+      padding: .75em 12px;
+    }
+
+    .success-cf, .error-cf {
+      display: none;
+    }
+
+    .success-cf p {
+      background: $successBg;
+    }
+
+    .error-cf p {
+      background: $alertBg;
+    }
+
+    .success-cf p, .error-cf p {
+      position: absolute;
+      display: block;
+      top: 40%;
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: 10;
+      color: $white;
+      border-radius: 2px;
+      padding: .75em;
+    }
+  }
+
+  /* ------------------------------------------------------------------------------
+   Map
+  -------------------------------------------------------------------------------*/
+  .map {
+    position: relative;
+    box-shadow: 0 0 0 4px $white;
+    border-radius: 2px;
+  }
+
+  .address {
+    li i {
+      padding-right: 8px;
+      color: $primary;
+    }
+
+    li:last-child {
+      padding-bottom: 0;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------------------
+   Small devices (tablets, 768px and up)
+-------------------------------------------------------------------------------*/
+
+@include atLeastTablet {
+  .map {
+    padding-bottom: 250px;
+    height: 0;
+    overflow: hidden;
+  }
+  .map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+/* ------------------------------------------------------------------------------
+   Medium devices (desktops, 992px and up)
+-------------------------------------------------------------------------------*/
+
+@include atLeastSmallDesktop {
+  .contact-form {
+    margin-top: 0;
+  }
+  .animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  @-webkit-keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      -ms-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      -ms-transform: none;
+      transform: none;
+    }
+  }
+  .fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+  }
+
+  .map {
+    padding-bottom: 320px;
+  }
+}
+
+/* ------------------------------------------------------------------------------
+   Small devices (mobiles, up to 768px)
+-------------------------------------------------------------------------------*/
+
+@include mobile {
+  .contact-form {
+    padding-bottom: 20px;
+  }
+
+  .map {
+    padding-bottom: 250px;
+    height: 0;
+    overflow: hidden;
+  }
+  .map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+// Temporary hack to allow underlining in markdown
+em > strong {
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+img.flaticon {
+  height: 1em;
+  margin-top: -.25em;
+  &.x3 {
+    height: 3em;
+  }
 }

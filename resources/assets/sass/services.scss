@@ -1,0 +1,26 @@
+@import "commonImports.scss";
+
+#serviceIcon {
+  height: 100px;
+  padding-right: 20px;
+}
+
+.serviceSection {
+  padding-bottom: 30px;
+
+  h5 {
+    font-weight: bold;
+  }
+}
+
+@include mobile {
+  #messengerImg {
+    display: none;
+  }
+}
+
+@include tablet {
+  #messengerImg {
+    width: 300px;
+  }
+}

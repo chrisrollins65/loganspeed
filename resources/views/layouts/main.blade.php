@@ -14,7 +14,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink" id="mainNav">
     <div class="container">
-        <a class="navbar-brand" href="{!! route('getHome') !!}">{{ config('app.name') }}</a>
+        <a class="navbar-brand" href="{!! iRoute('getHome') !!}">{{ config('app.name') }}</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fa fa-bars"></i>
@@ -22,11 +22,24 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" data-target="contact-container" href="#">@lang('main.nav.contact')</a>
+                    <a class="nav-link" href="{!! iRoute('getCompany') !!}">@lang('company.company')</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{!! iRoute('getServices') !!}">@lang('services.services')</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{!! iRoute('getRates') !!}">@lang('rates.rates')</a>
+                </li>
+                <li class="nav-item">
+                    @if(!empty($isHome))
+                        <a class="nav-link js-scroll-trigger" data-target="contact-container" href="#">@lang('main.nav.contact')</a>
+                    @else
+                        <a class="nav-link" href="{!! iRoute('getContact') !!}">@lang('main.nav.contact')</a>
+                    @endif
                 </li>
                 @foreach ($appLanguages as $appLang)
                 <li class="nav-item">
-                    <a class="nav-link nav-lang" href="{!! str_replace($appLanguages, $appLang, url()->current()) !!}">
+                    <a class="nav-link nav-lang" href="{!! iRoute(Route::currentRouteName(), [], true, $appLang) !!}">
                         <img alt="@lang('main.languages.' . $appLang)" title="@lang('main.languages.' . $appLang)" src="{!! asset('img/flags/' . $appLang . '.png') !!}" />
                     </a>
                 </li>
@@ -43,7 +56,7 @@
 </div><!-- /#mainWrapper -->
 
 <!--site-footer-->
-<footer class="site-footer section-spacing">
+<footer class="site-footer">
     <div class="container text-center">
         <p class="wow fadeInUp">© {!! date('Y') !!} Logan Speed S.L. | <i class="fa fa-phone"></i> @lang('main.phone') | <i class="fa fa-envelope"></i> @lang('main.email')
         <br /><a href="https://www.google.es/maps/place/Carrer+de+Lleida,+18,+08970+Sant+Joan+Desp%C3%AD,+Barcelona/@41.3687811,2.0716484,17z/data=!3m1!4b1!4m5!3m4!1s0x12a49964355cfa11:0xd89fa132e13edb11!8m2!3d41.3687771!4d2.0738371"><i class="fa fa-map-marker"></i> @lang('main.address')</a></p>
@@ -54,6 +67,10 @@
 <script src="{!! asset('js/vendor.js') !!}"></script>
 <script src="{!! mix('/js/app.js') !!}"></script>
 <script>
+    var logan = {
+        'contactPostUrl': @json(iRoute('postContact'))
+    };
+
     if( $('.captchaquestiondiv').length ){
         $('.captchaquestiondiv').hide();
     }

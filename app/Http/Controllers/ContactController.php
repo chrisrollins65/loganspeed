@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
+    public function getContact()
+    {
+        return view('contact');
+    }
+
     /**
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse

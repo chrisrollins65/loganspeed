@@ -41,38 +41,11 @@ if ($(window).width() > 992) {
  Textrotator
  ========================================================================== */
 
-$(".rotate").textrotator({
-    animation: "dissolve",
-    separator: ",",
-    speed: 2500
-});
-
-/* ==========================================================================
- Contact Form
- ========================================================================== */
-
-var submitted = false;
-$('#contact-form').submit(function(e){
-    e.preventDefault();
-    if (submitted) {
-        return;
-    }
-    submitted = true;
-    var $this = $(this);
-    $.post(logan.contactPostUrl, $this.serialize())
-        .done(function() {
-            $this.find(':input').attr('disabled', 'disabled');
-            $this.fadeTo("slow", 0.15, function() {
-                $this.find('label').css('cursor', 'default');
-                $('.success-cf').fadeIn();
-            });
-        })
-        .fail(function() {
-            $this.fadeTo("slow", 0.15, function() {
-                $('.error-cf').fadeIn();
-            });
-        })
-});
+//$(".rotate").textrotator({
+//    animation: "dissolve",
+//    separator: ",",
+//    speed: 2500
+//});
 
 // Collapse Navbar
 var navbarCollapse = function navbarCollapse() {

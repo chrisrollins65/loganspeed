@@ -11,27 +11,18 @@
 |
 */
 
-/**
- * Set the locale based on the first segment of the request
- * I would've loved to have done this in a middleware,
- * but since routes are defined before middleware, this will have to do...
- */
-if ( in_array(request()->segment(1), config('app.languages')) ) {
-    app()->setLocale(request()->segment(1));
-}
+foreach (config('app.languages') as $prefix) {
+    Route::group(['prefix' => $prefix], function () use ($prefix) {
+        $namePrefix = $prefix . '_';
+        Route::get('/', 'MainController@getHome')->name($namePrefix . 'getHome');
+        Route::get(trans('routes.company', [], $prefix), 'MainController@getCompany')->name($namePrefix . 'getCompany');
+        Route::get(trans('routes.services', [], $prefix), 'MainController@getServices')->name($namePrefix . 'getServices');
+        Route::get(trans('routes.rates', [], $prefix), 'MainController@getRates')->name($namePrefix . 'getRates');
+        Route::get(trans('routes.contact', [], $prefix), 'ContactController@getContact')->name($namePrefix . 'getContact');
 
-Route::group(['prefix'=>app()->getLocale()], function(){
+        Route::group(['middleware' => ['spam']], function () use ($namePrefix) {
+            Route::post('contact', ['as' => $namePrefix . 'postContact', 'uses' => 'ContactController@postContact']);
+        });
 
-    Route::get('/', function () {
-        return view('index');
-    })->name('getHome');
-
-    Route::get('services', function () {
-        return view('services');
-    })->name('getServices');
-
-    Route::group(['middleware' => ['spam']], function() {
-        Route::post('contact', ['as' => 'postContact', 'uses' => 'ContactController@postContact']);
     });
-
-});
+}
