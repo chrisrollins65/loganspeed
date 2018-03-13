@@ -38,6 +38,9 @@ if (!function_exists('iRoute')) {
         if (strlen($name) >= 3 && $name[2] == '_') {
             $name = substr($name, 3);
         }
+        if (empty($name)) {
+            $name = 'getHome';
+        }
         if (!in_array($prefix, config('app.languages'))) {
             $prefix = app()->getLocale();
         }
@@ -47,9 +50,9 @@ if (!function_exists('iRoute')) {
 
 if (!function_exists('flaticon')) {
     /**
-     * Replaces the language prefix in the given (or current) url with the given language prefix
-     * @param string $lang
-     * @param string|null $url
+     * @param string $icon
+     * @param array $classes
+     * @param string|null $id
      * @return string
      */
     function flaticon($icon, $classes = [], $id = null)

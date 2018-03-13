@@ -56,6 +56,10 @@ body {
   text-shadow: none !important;
 }
 
+#phoneHeading {
+  padding-top:15px;
+}
+
 /* ------------------------------------------------------------------------------
    Features
 -------------------------------------------------------------------------------*/
@@ -135,6 +139,10 @@ body {
 @include mobile {
   #slogan {
     font-size: 24px;
+  }
+
+  #phoneHeading h1 {
+    font-size: 20px;
   }
 
   #contactBtn {

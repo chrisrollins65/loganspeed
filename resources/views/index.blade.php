@@ -23,6 +23,10 @@
                     <button id="contactBtn" class="btn-primary btn btn-xl text-uppercase js-scroll-trigger" data-target="contact-container">@lang('home.contactUs')</button>
                 </div>
 
+                <div class="text-center wow fadeInUp" id="phoneHeading">
+                    <h1><i class="fa fa-phone"></i> @lang('main.phone')</h1>
+                </div>
+
             </div>
         </div>
     </div>
