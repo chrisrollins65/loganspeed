@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="{!! app()->getLocale() !!}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,6 +37,13 @@
                         <a class="nav-link" href="{!! iRoute('getContact') !!}">@lang('main.nav.contact')</a>
                     @endif
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" id="facebookNav" href="https://www.facebook.com/loganspeedsl/" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                </li>
+                <li class="nav-item" id="instagramNavItem">
+                    <a class="nav-link" id="instagramNav" href="https://www.instagram.com/loganspeedsl/" target="_blank"><i class="fa fa-instagram"></i></a>
+                </li>
                 @foreach ($appLanguages as $appLang)
                 <li class="nav-item">
                     <a class="nav-link nav-lang" href="{!! iRoute(Route::currentRouteName(), [], true, $appLang) !!}">
@@ -59,7 +66,8 @@
 <footer class="site-footer">
     <div class="container text-center">
         <p class="wow fadeInUp">© {!! date('Y') !!} Logan Speed S.L. | <i class="fa fa-phone"></i> @lang('main.phone') | <i class="fa fa-envelope"></i> @lang('main.email')
-        <br /><a href="https://www.google.es/maps/place/Carrer+de+Lleida,+18,+08970+Sant+Joan+Desp%C3%AD,+Barcelona/@41.3687811,2.0716484,17z/data=!3m1!4b1!4m5!3m4!1s0x12a49964355cfa11:0xd89fa132e13edb11!8m2!3d41.3687771!4d2.0738371"><i class="fa fa-map-marker"></i> @lang('main.address')</a></p>
+        <br /><a href="https://www.google.es/maps/place/Carrer+de+Lleida,+18,+08970+Sant+Joan+Desp%C3%AD,+Barcelona/@41.3687811,2.0716484,17z/data=!3m1!4b1!4m5!3m4!1s0x12a49964355cfa11:0xd89fa132e13edb11!8m2!3d41.3687771!4d2.0738371"><i class="fa fa-map-marker"></i> @lang('main.address')</a>
+        <br />Website developed by <a href="https://leowebservices.com">Leo Web Services</a></p>
     </div>
 </footer>
 <!--site-footer end-->

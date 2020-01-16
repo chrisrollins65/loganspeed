@@ -20,6 +20,10 @@
     RewriteCond %{HTTP_HOST} loganspeed\.com$ [NC]
     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,NE]
 
+    # Redirect to WWW
+    RewriteCond %{HTTP_HOST} ^loganspeed.com$ [NC]
+    RewriteRule ^(.*)$ http://www.loganspeed.com/$1 [R=301,L]
+
     # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f

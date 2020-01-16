@@ -1,4 +1,5 @@
 @import "commonImports.scss";
+@import "mixins.scss";
 
 #serviceIcon {
   height: 100px;
@@ -6,11 +7,20 @@
 }
 
 .serviceSection {
-  padding-bottom: 30px;
+  padding-bottom: 50px;
 
   h5 {
     font-weight: bold;
+    color: $darkBlue;
   }
+}
+
+.serviceSection:first-of-type {
+  padding-top:50px;
+}
+
+#contactSection {
+  padding-bottom: 50px;
 }
 
 @include mobile {
@@ -22,5 +32,40 @@
 @include tablet {
   #messengerImg {
     width: 300px;
+  }
+}
+
+/* ------------------------------------------------------------------------------
+   Inmobi Rapid
+-------------------------------------------------------------------------------*/
+#inmobirapidServices {
+  li {
+    list-style: disc;
+  }
+  ul {
+    padding-left: 3em;
+  }
+}
+
+#inmobirapidHeader {
+  background: #bc0000;
+  color: #ffffff;
+  margin:2em 0;
+  padding:2em 0;
+}
+
+#inmobirapidLogo {
+  max-height:80px;
+}
+
+@include atLeastTablet {
+  #inmobirapidHeader {
+    h1 { display:inline-block; }
+  }
+}
+
+@include mobile {
+  #inmobirapidHeader {
+    text-align: center;
   }
 }

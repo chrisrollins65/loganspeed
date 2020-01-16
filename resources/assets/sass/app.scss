@@ -16,11 +16,18 @@ body {
 }
 
 .site-footer {
-  background: $gray-200;
+  background: $darkBlue;
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: 13px;
   flex-shrink: 0;
+  p {
+    color: $gray-50;
+    a {
+      color: $gray-50;
+      font-weight: bold;
+    }
+  }
 }
 
 p {
@@ -72,14 +79,30 @@ ul, li {
 }
 
 .btn-primary {
-  background-color: $primary;
-  border-color: $primary;
+  background-color: $darkBlue;
+  border-color: $darkBlue;
   &:active,
   &:focus,
   &:hover {
-    background-color: darken($primary, 7.5%) !important;
-    border-color: darken($primary, 7.5%) !important;
+    background-color: darken($darkBlue, 7.5%) !important;
+    border-color: darken($darkBlue, 7.5%) !important;
     color: white;
+  }
+  &:active,
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, .5) !important;
+  }
+}
+
+.btn-outline-primary {
+  color: $darkBlue;
+  border-color: $darkBlue;
+  &:active,
+  &:focus,
+  &:hover {
+    color: $white;
+    background-color: $darkBlue;
+    border-color: $darkBlue;
   }
   &:active,
   &:focus {
@@ -98,8 +121,8 @@ div#mainWrapper {
 
 .btn-default {
   color: $white;
-  background-color: $primary;
-  border-color: $primary;
+  background-color: $darkBlue;
+  border-color: $darkBlue;
   -webkit-transition: all .5s ease-out;
   transition: all .5s ease-out;
   padding: 12px 1.5em;
@@ -107,8 +130,8 @@ div#mainWrapper {
 
 .btn-default:hover, .btn-default:focus, .btn-default:active {
   color: $white;
-  background-color: darken($primary, 10%);
-  border-color: darken($primary, 10%);
+  background-color: lighten($darkBlue, 10%);
+  border-color: lighten($darkBlue, 10%);
 }
 
 .btn:active:focus, .btn-default:focus, .btn:focus, .btn-default:active {
@@ -143,7 +166,7 @@ section.contact {
     font-size: 27px;
     text-transform: uppercase;
     letter-spacing: 3px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 
   .btn-default {
@@ -192,12 +215,13 @@ section.contact {
     position: relative;
     box-shadow: 0 0 0 4px $white;
     border-radius: 2px;
+    margin-bottom: 20px;
   }
 
   .address {
     li i {
       padding-right: 8px;
-      color: $primary;
+      color: $darkRed;
     }
 
     li:last-child {

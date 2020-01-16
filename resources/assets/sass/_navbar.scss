@@ -10,17 +10,16 @@
     text-transform: uppercase;
     color: white;
     border: 0;
-    background-color: $navPrimary;
     @include heading-font;
   }
   .navbar-brand {
-    color: $navPrimary;
+    color: $white;
     @include heading-font;
     &.active,
     &:active,
     &:focus,
     &:hover {
-      color: darken($navPrimary, 10%);
+      color: darken($white, 10%);
     }
     text-shadow: 2px 2px $black;
     font-weight: bold;
@@ -36,10 +35,20 @@
         @include heading-font;
         &.active,
         &:hover {
-          color: $navPrimary;
+          color: $white;
         }
       }
     }
+  }
+
+  #facebookNav {
+    padding-right: 0;
+  }
+
+  #facebookNav, #instagramNav {
+    font-size: 30px;
+    padding-top: .6em;
+    padding-bottom: .6em;
   }
 }
 @media(min-width:992px) {
@@ -83,6 +92,10 @@
           }
         }
       }
+      #facebookNav, #instagramNav {
+        padding-top: .55em;
+        padding-bottom: .4em;
+      }
     }
   }
 }
@@ -90,4 +103,11 @@
 .nav-lang {
   padding-left:.5em !important;
   padding-right:.5em !important;
+}
+
+@include mobile {
+  #instagramNavItem {
+    margin-top: -66px;
+    margin-left: 50px;
+  }
 }

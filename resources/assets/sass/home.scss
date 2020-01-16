@@ -42,22 +42,54 @@ body {
 }
 
 .main h1 {
-  font-size: 36px;
+  font-size: 50px;
   font-weight: 700;
-  letter-spacing: 7px;
+  letter-spacing: 3px;
   text-transform: uppercase;
+  line-height: 1.5em;
+  margin-bottom:20px;
 }
 
 .welcome-message {
   padding-top: 1.5em;
+  img {
+    margin-bottom:20px;
+    max-height:100px;
+  }
 }
 
 .rotate {
   text-shadow: none !important;
 }
 
-#phoneHeading {
+#contactHeading {
   padding-top:15px;
+  h3 {
+    font-weight: bold;
+    letter-spacing: 3px;
+    display: inline-block;
+    margin-left:50px;
+    margin-bottom:-3px;
+  }
+}
+
+/* ------------------------------------------------------------------------------
+   Inmobi Rapid
+-------------------------------------------------------------------------------*/
+
+#inmobirapid {
+  background: $darkRed;
+  text-align: center;
+  color: $white;
+  img {
+    max-height: 70px;
+  }
+  h2, h3 {
+    letter-spacing: 3px;
+  }
+  h3 {
+    margin-bottom: 20px;
+  }
 }
 
 /* ------------------------------------------------------------------------------
@@ -74,6 +106,16 @@ body {
 
 .features h2, .product-features h4 {
   margin-top: 0;
+}
+
+.product-features h4 {
+  font-weight: bold;
+  color: $darkBlue;
+  font-size: 18px;
+}
+
+.product-features p {
+  font-size: 15px;
 }
 
 .features h2 {
@@ -106,6 +148,11 @@ body {
 
 .second-bg h2, .contact h2 {
   margin: 0;
+  line-height: 1.5em;
+}
+
+.second-bg h4 {
+  margin-top: 20px;
 }
 
 /* ------------------------------------------------------------------------------
@@ -136,19 +183,37 @@ body {
   background: darken($primary, 10%);
 }
 
+/* ------------------------------------------------------------------------------
+   Mobiles (up to 768px)
+-------------------------------------------------------------------------------*/
 @include mobile {
+  .main h1 {
+    line-height: .6em;
+  }
+
   #slogan {
     font-size: 24px;
   }
 
-  #phoneHeading h1 {
+  #contactHeading h3 {
     font-size: 20px;
+    margin-left: 0;
   }
 
   #contactBtn {
     padding-left: 20px;
     padding-right: 20px;
     font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .product-features h4 {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .second-bg h2 {
+    font-size: 28px;
   }
 }
 
@@ -184,7 +249,7 @@ body {
     z-index: 1;
     width: 100%;
   }
-  .features, .second-bg, .contact {
+  #inmobirapid, .features, .second-bg, .contact {
     position: relative;
     z-index: 2;
   }
@@ -194,15 +259,22 @@ body {
   .section-spacing {
     padding: 6em 0;
   }
-  .features.section-spacing {
-    padding: 6em 0 3em;
+  #inmobirapid.section-spacing {
+    padding: 2em 0;
     margin-top: 46.8em;
   }
+
   .product-features {
     margin-bottom: 3.75em;
   }
   .features.section-spacing, .contact {
     background: $white;
+  }
+
+  .navbar-shrink {
+    #facebookNav, #instagramNav {
+      padding-top: .4em !important;
+    }
   }
 }
 

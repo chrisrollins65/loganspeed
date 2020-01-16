@@ -20,11 +20,12 @@
                 <!--welcome-message end-->
 
                 <div class="text-center">
-                    <button id="contactBtn" class="btn-primary btn btn-xl text-uppercase js-scroll-trigger" data-target="contact-container">@lang('home.contactUs')</button>
+
                 </div>
 
-                <div class="text-center wow fadeInUp" id="phoneHeading">
-                    <h1><i class="fa fa-phone"></i> @lang('main.phone')</h1>
+                <div class="text-center wow fadeInUp" id="contactHeading">
+                    <button id="contactBtn" class="btn-outline-light btn btn-xl text-uppercase js-scroll-trigger" data-target="contact-container">@lang('home.contactUs')</button>
+                    <h3 class="align-center"><i class="fa fa-phone"></i> @lang('main.phone')</h3>
                 </div>
 
             </div>
@@ -32,6 +33,17 @@
     </div>
 </section>
 <!--main end-->
+
+<!--inmobi rapid-->
+<section id="inmobirapid" class="section-spacing">
+    <div class="container">
+        <img src="{!! asset('img/inmobi-rapid-logo.jpg') !!}" />
+        <h2 class="text-uppercase">Inmobiliaria</h2>
+        <h3>Asesoría, alquiler, ventas, reformas y mudanzas</h3>
+        <a href="{!! iRoute('getServices') !!}#inmobirapidServices" id="inmobirapidServicesBtn" class="btn-outline-light btn btn-xl text-uppercase">Más información</a>
+    </div>
+</section>
+<!--inmobi rapid end-->
 
 <!--Features-->
 
