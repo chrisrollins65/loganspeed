@@ -21,5 +21,10 @@ return [
             'error' => 'Something went wrong, try refreshing and submitting the form again.',
         ]
     ],
+    'inmobirapid' => [
+        'realEstate' => 'Real Estate',
+        'description' => 'Advice, rental, sales, renovations and moving',
+        'moreInfo' => 'More information',
+    ],
 
 ];

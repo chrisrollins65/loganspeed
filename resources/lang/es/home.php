@@ -21,5 +21,10 @@ return [
             'error' => 'No se ha podido enviar tu mensaje. Prueba recargar la página y enviar el mensaje de nuevo.',
         ]
     ],
+    'inmobirapid' => [
+        'realEstate' => 'Inmobiliaria',
+        'description' => 'Asesoría, alquiler, ventas, reformas y mudanzas',
+        'moreInfo' => 'Más información',
+    ],
 
 ];
