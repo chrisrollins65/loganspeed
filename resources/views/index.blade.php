@@ -14,7 +14,7 @@
 
                 <!--welcome-message-->
                 <header class="welcome-message text-center">
-                    <img src="{!! asset('img/logo.png') !!}" />
+                    <img src="{!! asset('img/logan-logo.png') !!}" />
                     <h1><span class="rotate" id="slogan">@lang('home.rotatingHeader')</span></h1>
                 </header>
                 <!--welcome-message end-->
