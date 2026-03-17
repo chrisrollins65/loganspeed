@@ -63,7 +63,7 @@
                 </li>
                 @foreach ($appLanguages as $appLang)
                 <li class="nav-item">
-                    <a class="nav-link nav-lang" href="{!! iRoute(Route::currentRouteName(), [], true, $appLang) !!}">
+                    <a class="nav-link nav-lang" href="{!! route('setLanguage', ['locale' => $appLang, 'route' => Route::currentRouteName()]) !!}">
                         <img alt="@lang('main.languages.' . $appLang)" title="@lang('main.languages.' . $appLang)" src="{!! asset('img/flags/' . $appLang . '.png') !!}" />
                     </a>
                 </li>

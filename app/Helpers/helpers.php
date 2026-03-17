@@ -44,7 +44,13 @@ if (!function_exists('iRoute')) {
         if (!in_array($prefix, config('app.languages'))) {
             $prefix = app()->getLocale();
         }
-        return route($prefix . '_' . $name, $parameters, $absolute);
+        $localizedName = $prefix . '_' . $name;
+
+        if (\Illuminate\Support\Facades\Route::has($localizedName)) {
+            return route($localizedName, $parameters, $absolute);
+        }
+
+        return route($name, $parameters, $absolute);
     }
 }
 
