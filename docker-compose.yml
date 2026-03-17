@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: loganspeed_app
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+      - /var/www/html/vendor
+    restart: unless-stopped
+

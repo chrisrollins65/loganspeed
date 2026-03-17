@@ -1,6 +1,6 @@
 <?php
 
-use League\CommonMark\Converter;
+use League\CommonMark\CommonMarkConverter;
 
 if (!function_exists('mdtrans')) {
     /**
@@ -15,9 +15,9 @@ if (!function_exists('mdtrans')) {
      */
     function mdtrans($key = null, $replace = [], $locale = null, $withoutWrapper = true)
     {
-        /** @var Converter $converter */
-        $converter = app(Converter::class);
-        $converted = $converter->convertToHtml(e(trans($key, $replace, $locale)));
+        /** @var CommonMarkConverter $converter */
+        $converter = app(CommonMarkConverter::class);
+        $converted = (string) $converter->convert(e(trans($key, $replace, $locale)));
         // regex: https://stackoverflow.com/a/4575830/1193304
         return $withoutWrapper ? trim(preg_replace('!^<p>(.*?)</p>$!i', '$1', $converted)) : trim($converted);
     }
