@@ -82,7 +82,7 @@
 <!--site-footer-->
 <footer class="site-footer">
     <div class="container text-center">
-        <p class="wow fadeInUp">© {!! date('Y') !!} Logan Speed S.L. | <i class="fa fa-phone"></i> @lang('main.phone') | <i class="fa fa-envelope"></i> @lang('main.email')
+        <p class="wow fadeInUp">© {!! date('Y') !!} Logan Speed | <i class="fa fa-phone"></i> @lang('main.phone') | <i class="fa fa-envelope"></i> @lang('main.email')
         <br /><a href="https://www.google.es/maps/place/Carrer+de+Lleida,+18,+08970+Sant+Joan+Desp%C3%AD,+Barcelona/@41.3687811,2.0716484,17z/data=!3m1!4b1!4m5!3m4!1s0x12a49964355cfa11:0xd89fa132e13edb11!8m2!3d41.3687771!4d2.0738371"><i class="fa fa-map-marker"></i> @lang('main.address')</a>
         <br />Website developed by <a href="https://leowebservices.com">Leo Web Services</a></p>
     </div>

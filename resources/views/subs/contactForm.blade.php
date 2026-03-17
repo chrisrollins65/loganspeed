@@ -39,8 +39,8 @@
             <div class="col-md-7 col-sm-6 order-md-first">
                 <!--map-->
                 <div class="wow fadeInUp map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d374.28035295255137!2d2.073788818166198!3d41.36880878276302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a49964355cfa11%3A0xd89fa132e13edb11!2sCarrer+de+Lleida%2C+18%2C+08970+Sant+Joan+Desp%C3%AD%2C+Barcelona!5e0!3m2!1sen!2ses!4v1520020565366"
-                            width="635" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.2613008442313!2d2.0704582764390578!3d41.36840729717165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a499643b0aa107%3A0x290b59b380a3f657!2sCarrer%20de%20Sant%20Feliu%20de%20Llobregat%2C%203%2C%20local%202%2C%2008970%20Sant%20Joan%20Desp%C3%AD%2C%20Barcelona!5e0!3m2!1sen!2ses!4v1773782992006!5m2!1sen!2ses"
+                        width="635" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
                 </div>
                 <ul class="wow fadeInUp address">

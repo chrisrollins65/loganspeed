@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Logan Speed S.L</h1>
+        <h1>Logan Speed</h1>
 
         <h3>@lang('company.slogan')</h3>
 

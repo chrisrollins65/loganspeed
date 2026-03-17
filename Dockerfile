@@ -3,7 +3,7 @@ FROM php:8.5-apache
 # Enable Apache modules needed for Laravel (pretty URLs)
 RUN a2enmod rewrite
 
-# Install system dependencies
+# Install system dependencies (including Node.js and npm for asset building)
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libzip-dev \
     libonig-dev \
+    nodejs \
+    npm \
     && rm -rf /var/lib/apt/lists/*
 
 # Configure and install PHP extensions for Laravel

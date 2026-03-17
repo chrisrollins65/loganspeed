@@ -37,10 +37,6 @@
 <!--inmobi rapid-->
 <section id="inmobirapid" class="section-spacing">
     <div class="container">
-        <img src="{!! asset('img/inmobi-rapid-logo.jpg') !!}" />
-        <h2 class="text-uppercase">@lang('home.inmobirapid.realEstate')</h2>
-        <h3>@lang('home.inmobirapid.description')</h3>
-        <a href="{!! iRoute('getServices') !!}#inmobirapidServices" id="inmobirapidServicesBtn" class="btn-outline-light btn btn-xl text-uppercase">@lang('home.inmobirapid.moreInfo')</a>
     </div>
 </section>
 <!--inmobi rapid end-->
