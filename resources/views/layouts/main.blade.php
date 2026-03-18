@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name') }} @yield('title')</title>
+    <link rel="alternate" hreflang="es" href="{!! iRoute(Route::currentRouteName() ?: 'getHome', [], true, 'es') !!}">
+    <link rel="alternate" hreflang="en" href="{!! iRoute(Route::currentRouteName() ?: 'getHome', [], true, 'en') !!}">
+    <link rel="alternate" hreflang="x-default" href="{!! iRoute(Route::currentRouteName() ?: 'getHome', [], true, 'es') !!}">
     <link href="{!! asset('css/vendor.css') !!}" rel="stylesheet">
     <link href="{!! mix('/css/app.css') !!}" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="57x57" href="img/logos/apple-icon-57x57.png">
@@ -63,7 +66,7 @@
                 </li>
                 @foreach ($appLanguages as $appLang)
                 <li class="nav-item">
-                    <a class="nav-link nav-lang" href="{!! route('setLanguage', ['locale' => $appLang, 'route' => Route::currentRouteName()]) !!}">
+                    <a class="nav-link nav-lang" href="{!! iRoute(Route::currentRouteName() ?: 'getHome', [], true, $appLang) !!}">
                         <img alt="@lang('main.languages.' . $appLang)" title="@lang('main.languages.' . $appLang)" src="{!! asset('img/flags/' . $appLang . '.png') !!}" />
                     </a>
                 </li>
