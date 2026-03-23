@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 
+Route::get('/maintenance/clear-cache', 'MainController@clearCache')->name('maintenance_clear_cache');
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
